@@ -78,17 +78,21 @@ public class App
             return;
         }
 
-       // log.error(content.toString());
         int trueFlag = 0;
-/*        for (String id : ids) {
-            if (CaiMoGuHelp.actSore(id,null)){
+       for (String id : ids) {
+            if (CaiMoGuHelp.actSore(id,caiMoGuToken)){
                 trueFlag++;
                 acIds.add(id);
+                 log.error("评价成功 "+id);
+            }else{
+                log.error("评价失败 "+id);
             }
             if (trueFlag == 3) {
                 return;
             }
-        }*/
+
+        }
+        log.error("成功评价"+trueFlag);
         String acIdsStr = String.join("\n", acIds);
         GithubHelp.createOrUpdateFile(acIdsStr,acIdsFileName,ownerRepo,githubApiToken);
         GithubHelp.createOrUpdateFile(formatter.format(current),runFileName,ownerRepo,githubApiToken);
