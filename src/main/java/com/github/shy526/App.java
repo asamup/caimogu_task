@@ -32,7 +32,7 @@ public class App
             return;
         }
         if (caiMoGuToken==null|| caiMoGuToken.trim().isEmpty()){
-            log.error("CAI_MO_GU_TOKEN 参数没有配置(浏览器中f12 应用程序 Cookie 中的 CAIMOGU )");
+            log.error("CAI_MO_GU_TOKEN 参数没有配置(浏览器中f12 应用程序 Cookie 中的 cmg_token )");
             return;
         }
         log.error("配置设置正常");
